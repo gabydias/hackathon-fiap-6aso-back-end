@@ -1,0 +1,16 @@
+# Specify the version for docker-compose.yml
+version: "3.7"
+
+services:
+  web:
+    build: .
+    container_name: "music-api-2"
+    environment:
+      CLOUD_SQL_USERNAME: "teste"
+      CLOUD_SQL_PASSWORD: "123"
+      CLOUD_SQL_DATABASE_NAME: "db"
+      DB_LOCAL_HOST: "music"
+      CLOUD_SQL_CONNECTION_NAME: "12345"
+      PORT: 8080
+    ports:
+      - "8080:8080"
